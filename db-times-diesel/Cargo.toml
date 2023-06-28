@@ -1,0 +1,23 @@
+[package]
+name = "db_times_diesel"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+diesel = { version = "*", features = ["postgres", "mysql"] }
+dotenvy = "0.15"
+bigdecimal = "0.3.1"
+chrono = "*"
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[bin]]
+name = "show_films"
+path = "src/bin/show_films.rs"
+
+[[bench]]
+name = "db_bench"
+harness = false
